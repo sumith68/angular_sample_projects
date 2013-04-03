@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body>
+    <h1> ToDo </h1>
+    <div ng-controller="TodoCtrl">
+      <span>{{remaining()}} of {{todos.length}} remaining</span>
+      [ <a href="" ng-click="archive()">archive</a> ]
+      <ul class="unstyled">
+        <li ng-repeat="todo in todos">
+           <input type="checkbox" ng-model="todo.done" >
+           <span class='done-{{todo.done}}'>{{todo.text}}</span>
+        </li>
+      </ul>
+      <form ng-submit="addTodo()">
+        <input type="text" ng-model="todoText" placeholder="Enter the todoname">
+        <input class="btn-primary" type="submit">
+      </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+    <script src="todo.js"></script>
+  </body>
+</html>
