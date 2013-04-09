@@ -1,0 +1,23 @@
+
+<!doctype html>
+<html ng-app="twitter" ng-csp>
+  <head>
+    <link rel="stylesheet" href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css">
+  </head>
+  <body>
+      <div ng-controller="TwitterCtrl">
+        <form class="form-horizontal">
+          <input type="text" ng-model="searchTerm">
+          <btn class="btn btn-search btn-mini" ng-click="doSearch()"><i class="icon-search"></i>Search</btn>
+        </form>
+        <table class="table table-striped">
+          <tr ng-repeat="tweet in twitterResult.results">
+            <td> {{tweet.text}} </td>
+          </tr>
+        </table>
+      </div>
+    <script type="text/javascript" src="angular.js"></script>
+    <script type="text/javascript" src="angular-resource.js"></script>
+    <script type="text/javascript" src="twitter.js"></script>
+  </body>
+</html>
